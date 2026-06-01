@@ -1,0 +1,169 @@
+import { Link } from "react-router-dom";
+
+import PortalHeader from "../components/PortalHeader";
+import { useAuth } from "../lib/auth";
+import { buildLoginPath } from "../lib/routing";
+
+const teamCards = [
+  {
+    title: "团队介绍",
+    description: "这里放置团队简介占位内容，可替换为院系、实验室、项目组或企业团队的正式介绍。"
+  }
+];
+
+const capabilityCards = [
+  {
+    title: "项目介绍与品牌展示",
+    description: "通过官网式页面讲清团队背景、项目目标、民族药应用价值与系统成果。"
+  },
+  {
+    title: "多模态问答与多轮追问",
+    description: "支持文本提问、图片输入、会话历史恢复与知识源切换，适合课堂演示。"
+  },
+  {
+    title: "专家知识库与图谱联动",
+    description: "从文档上传、处理进度到知识图谱浏览与专家问答，形成完整演示闭环。"
+  }
+];
+
+const roadmapSteps = [
+  "沉淀民族药与藏医药领域材料，形成可持续扩展的知识底座。",
+  "通过文档导入、实体关系抽取和图谱构建实现知识组织。",
+  "在问答系统中接入系统知识库与专家知识库，实现可解释回答。",
+  "面向课堂答辩与项目汇报，构建可运行、可展示、可替换内容的前端门户。"
+];
+
+const sceneCards = [
+  "藏药材、方剂、症候与功效知识查询",
+  "教师答辩展示中的交互式系统演示",
+  "民族药垂直场景的知识库构建与图谱浏览"
+];
+
+export default function HomePage() {
+  const { user } = useAuth();
+  const chatEntry = user ? "/chat" : buildLoginPath("/chat");
+
+  return (
+    <div className="page-shell page-shell--marketing">
+      <PortalHeader variant="marketing" />
+
+      <main className="marketing-page">
+        <section className="marketing-hero">
+          <div className="marketing-hero__copy">
+            <span className="eyebrow">民族药智慧服务平台</span>
+            <h1>以藏医药为切入点，搭建兼具展示感与交互性的智能知识问答系统。</h1>
+            <p>
+              这个前端既承担项目官网的介绍职能，也承担系统门户的演示职能。老师和评审可以先理解团队与研究背景，再顺畅进入问答系统与专家知识库完成完整体验。
+            </p>
+            <div className="marketing-hero__actions">
+              <Link to="/portal" className="primary-button">
+                进入系统门户
+              </Link>
+              <Link to={chatEntry} className="secondary-button">
+                直接体验问答
+              </Link>
+            </div>
+          </div>
+
+          <aside className="marketing-hero__panel">
+            <div className="hero-orb" />
+            <div className="hero-metrics">
+              <article className="metric-card">
+                <span>演示主线</span>
+                <strong>介绍 / 门户 / 问答 / 知识库</strong>
+              </article>
+              <article className="metric-card">
+                <span>核心场景</span>
+                <strong>藏医药知识问答与图谱展示</strong>
+              </article>
+            </div>
+          </aside>
+        </section>
+
+        <section className="marketing-section">
+          <div className="marketing-section__header">
+            <span className="eyebrow">团队背景</span>
+            <h2>华中科技大学先进制造与智能实验室</h2>
+          </div>
+          <div className="marketing-grid marketing-grid--three">
+            {teamCards.map((item) => (
+              <article key={item.title} className="story-card">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <span className="story-card__tag">后续可替换</span>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="marketing-section marketing-section--split">
+          <div className="story-card story-card--feature">
+            <span className="eyebrow">藏医药背景</span>
+            <h2>为什么从民族药与藏医药场景切入</h2>
+            <p>
+              藏医药知识体系具有丰富的药材、方剂、功效、症候和地域关联信息，非常适合作为知识图谱和智能问答的垂直应用场景。它既能体现项目的专业价值，也能展示知识工程与多模态交互能力。
+            </p>
+          </div>
+          <div className="marketing-grid marketing-grid--stack">
+            {sceneCards.map((item) => (
+              <article key={item} className="story-card story-card--compact">
+                <strong>{item}</strong>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="marketing-section">
+          <div className="marketing-section__header">
+            <span className="eyebrow">系统能力</span>
+            <h2>从展示到交互的一体化设计</h2>
+          </div>
+          <div className="marketing-grid marketing-grid--three">
+            {capabilityCards.map((item) => (
+              <article key={item.title} className="capability-card">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <div className="tag-row">
+                  <span className="tag">答辩展示</span>
+                  <span className="tag">用户友好</span>
+                  <span className="tag">逻辑完整</span>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="marketing-section">
+          <div className="marketing-section__header">
+            <span className="eyebrow">技术路线</span>
+            <h2>系统如何串联“知识构建”与“智能问答”</h2>
+          </div>
+          <div className="timeline">
+            {roadmapSteps.map((step, index) => (
+              <article key={step} className="timeline-item">
+                <span className="timeline-item__index">0{index + 1}</span>
+                <p>{step}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="cta-band">
+          <div>
+            <span className="eyebrow">系统入口</span>
+            <h2>下一步进入系统门户，开始演示真实交互链路。</h2>
+            <p>门户页会把问答系统和知识库管理整理成答辩友好的双入口结构，登录前后访问逻辑也会保持一致。</p>
+          </div>
+          <div className="cta-band__actions">
+            <Link to="/portal" className="primary-button">
+              打开系统门户
+            </Link>
+            <Link to={user ? "/knowledge" : buildLoginPath("/knowledge")} className="ghost-button">
+              查看知识库入口
+            </Link>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}

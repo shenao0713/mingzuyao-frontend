@@ -1,0 +1,466 @@
+.marketing-page,
+.portal-page {
+  display: grid;
+  gap: 48px;
+  padding-bottom: 80px;
+}
+
+/* Hero Section */
+.marketing-hero,
+.portal-hero,
+.cta-band {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 32px;
+  padding: 48px;
+  border-radius: 0;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.95), rgba(242, 248, 247, 0.9)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  box-shadow: var(--shadow-lg);
+}
+
+.marketing-hero {
+  grid-template-columns: 1.2fr 0.9fr;
+  align-items: stretch;
+  padding: 56px 48px;
+  background:
+    linear-gradient(135deg, rgba(255, 251, 244, 0.98), rgba(248, 242, 232, 0.95)),
+    linear-gradient(180deg, rgba(255, 253, 250, 0.5), rgba(255, 255, 255, 0));
+}
+
+.marketing-hero__content,
+.portal-hero__copy {
+  display: grid;
+  gap: 20px;
+}
+
+.marketing-hero__content h1,
+.portal-hero__copy h1 {
+  font-size: clamp(2.6rem, 4.5vw, 4.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.marketing-hero__content p,
+.portal-hero__copy p {
+  max-width: 58ch;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.marketing-hero__actions,
+.cta-band__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.marketing-hero__panel {
+  display: grid;
+  gap: 24px;
+  position: relative;
+  align-content: center;
+}
+
+.hero-orb {
+  position: absolute;
+  right: -60px;
+  top: -50px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(199, 147, 61, 0.6), rgba(180, 150, 100, 0.08) 55%),
+    linear-gradient(180deg, rgba(180, 150, 100, 0.15), rgba(200, 170, 120, 0.04));
+  filter: blur(4px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  padding: 24px;
+  display: grid;
+  gap: 6px;
+  background: rgba(255, 251, 244, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+  text-align: center;
+}
+
+.stat-card strong {
+  font-size: 1.8rem;
+  font-family: var(--font-display);
+  color: var(--gold);
+  line-height: 1;
+}
+
+.stat-card span {
+  color: var(--text-soft);
+  font-size: 0.88rem;
+}
+
+/* Sections */
+.marketing-section {
+  display: grid;
+  gap: 28px;
+}
+
+.marketing-section__header {
+  display: grid;
+  gap: 12px;
+  max-width: 800px;
+}
+
+.marketing-section__header h2 {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.15;
+}
+
+.marketing-section__header p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 65ch;
+}
+
+.marketing-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.marketing-grid--three,
+.portal-support-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.marketing-grid--stack {
+  grid-template-columns: 1fr;
+}
+
+.marketing-section--split {
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: stretch;
+}
+
+/* Cards */
+.story-card,
+.capability-card,
+.support-card {
+  padding: 28px;
+  display: grid;
+  gap: 16px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: rgba(255, 251, 244, 0.9);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.story-card:hover,
+.capability-card:hover,
+.support-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(31, 44, 47, 0.1);
+}
+
+.story-card h3,
+.capability-card h3,
+.support-card h3 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.story-card__tag {
+  justify-self: flex-start;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(47, 88, 116, 0.08);
+  color: var(--blue-deep);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.capability-card__icon {
+  font-size: 2.4rem;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.story-card--feature {
+  align-content: center;
+}
+
+/* Highlight Section */
+.marketing-section--highlight {
+  margin: 16px 0;
+}
+
+.highlight-card {
+  padding: 40px 44px;
+  display: grid;
+  gap: 20px;
+  background:
+    linear-gradient(135deg, rgba(199, 147, 61, 0.08), rgba(53, 107, 87, 0.06)),
+    var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.highlight-card h2 {
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+}
+
+.highlight-card p {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  max-width: 70ch;
+}
+
+.highlight-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Tech Roadmap */
+.tech-roadmap {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  position: relative;
+}
+
+.roadmap-step {
+  padding: 28px 24px;
+  display: grid;
+  gap: 16px;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+  position: relative;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.roadmap-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(31, 44, 47, 0.08);
+}
+
+.roadmap-step__icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.roadmap-step__content {
+  display: grid;
+  gap: 8px;
+}
+
+.roadmap-step__index {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.roadmap-step__content h3 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.roadmap-step__content p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.roadmap-connector {
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  z-index: 1;
+}
+
+/* Timeline (legacy) */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.timeline-item {
+  padding: 22px;
+  border-radius: 0;
+  background: rgba(255, 251, 245, 0.76);
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 14px;
+}
+
+.timeline-item__index {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+/* CTA Section */
+.cta-band {
+  grid-template-columns: 1fr;
+  align-items: center;
+  text-align: center;
+  padding: 56px 48px;
+  background:
+    linear-gradient(135deg, rgba(47, 88, 116, 0.06), rgba(53, 107, 87, 0.08)),
+    var(--bg-panel);
+}
+
+.cta-band__content {
+  display: grid;
+  gap: 16px;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-band h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin: 0;
+}
+
+.cta-band p {
+  max-width: 55ch;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+.cta-band__actions {
+  justify-content: center;
+  margin-top: 12px;
+}
+
+/* Portal Styles */
+.portal-hero {
+  align-items: end;
+}
+
+.system-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.system-strip span {
+  padding: 10px 14px;
+  border-radius: 0;
+  background: rgba(255, 251, 244, 0.9);
+  border: 1px solid var(--line);
+  color: var(--blue-deep);
+  font-weight: 600;
+}
+
+.portal-entry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.portal-entry-card {
+  padding: 28px;
+  display: grid;
+  gap: 18px;
+  background: rgba(255, 251, 244, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.portal-entry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(31, 44, 47, 0.1);
+}
+
+.portal-entry-card__head {
+  display: grid;
+  gap: 10px;
+}
+
+.portal-entry-card__head h2 {
+  font-size: 1.8rem;
+}
+
+.portal-entry-card__footer {
+  padding-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+  .marketing-hero,
+  .marketing-section--split,
+  .portal-entry-grid,
+  .marketing-grid--three,
+  .portal-support-grid,
+  .tech-roadmap,
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .marketing-hero {
+    padding: 40px 32px;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .roadmap-connector {
+    display: none;
+  }
+
+  .cta-band {
+    padding: 40px 32px;
+  }
+}
+
+@media (max-width: 720px) {
+  .marketing-page,
+  .portal-page {
+    gap: 32px;
+  }
+
+  .marketing-hero,
+  .portal-hero,
+  .cta-band {
+    padding: 32px 24px;
+  }
+
+  .marketing-hero__content h1,
+  .portal-hero__copy h1,
+  .cta-band h2 {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .highlight-card {
+    padding: 28px 24px;
+  }
+}

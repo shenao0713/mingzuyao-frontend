@@ -1,0 +1,33 @@
+:root {
+  color-scheme: light;
+  --font-sans: "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --bg-page: #ffffff;
+  --bg-soft: #fbf8f1;
+  --bg-panel: rgba(255, 251, 244, 0.84);
+  --bg-panel-strong: rgba(255, 253, 249, 0.94);
+  --bg-dark: #16303a;
+  --line: rgba(58, 73, 64, 0.12);
+  --line-strong: rgba(41, 60, 70, 0.18);
+  --text: #1f2c2f;
+  --text-soft: #587076;
+  --display: #143039;
+  --green: #356b57;
+  --green-deep: #214a3f;
+  --blue: #2f5874;
+  --blue-deep: #1c3d53;
+  --gold: #c7933d;
+  --gold-soft: #efe0bd;
+  --clay: #a55b41;
+  --danger: #be5e4b;
+  --danger-soft: rgba(190, 94, 75, 0.14);
+  --success: #3b7654;
+  --success-soft: rgba(59, 118, 84, 0.14);
+  --shadow-lg: 0 28px 80px rgba(26, 48, 57, 0.12);
+  --shadow-md: 0 18px 42px rgba(31, 44, 47, 0.1);
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --content-width: 1220px;
+}
